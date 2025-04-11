@@ -1,0 +1,29 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        <NoWarn>$(NoWarn);1591</NoWarn>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\Infrastructure\Adly.Infrastructure.CrossCutting\Adly.Infrastructure.CrossCutting.csproj" />
+      <ProjectReference Include="..\..\Infrastructure\Adly.Infrastructure.Identity\Adly.Infrastructure.Identity.csproj" />
+      <ProjectReference Include="..\..\Infrastructure\Adly.Infrastructure.Persistence\Adly.Infrastructure.Persistence.csproj" />
+      <ProjectReference Include="..\Adly.WebFramework\Adly.WebFramework.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Serilog.AspNetCore" Version="9.0.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Content Include="..\..\..\.dockerignore">
+        <Link>.dockerignore</Link>
+      </Content>
+    </ItemGroup>
+
+</Project>
